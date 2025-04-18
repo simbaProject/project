@@ -27,7 +27,9 @@ public class ProduitsDto {
     private int quantiteStock;
     @NotNull(message = "the unit's price is mandatory")
     private int prixUnitaire;
-    private List<UUID> imagesList;
+    private List<UUID> mediaList;
+    private String categorieLib;
+    private UUID vendeurId;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 

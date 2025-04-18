@@ -15,6 +15,7 @@ public class Categorie {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Column(unique = true,nullable = false)
     private String libelle;
 
 

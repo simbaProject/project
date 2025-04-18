@@ -23,9 +23,7 @@ public class Vendeur extends Users {
     @OneToMany(mappedBy = "vendeur", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Produits> listProduits= new ArrayList<>();
     private Double noteMoyenne;
-    @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
-    @JdbcTypeCode(SqlTypes.GEOMETRY)
-    private Point geography;
+
     @OneToMany(mappedBy = "vendeur", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Note> notesList;
 

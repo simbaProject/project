@@ -16,7 +16,4 @@ public class CategorieDto {
     private String libelle;
 
 
-
-    
-
 }

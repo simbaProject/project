@@ -21,10 +21,11 @@ public class CommandeDto {
     private Double prixTotal;
     @NotNull(message = "you should to tell if the command is with livraison")
     private boolean withLivraison;
-    private UUID idPrestataire;
-    private UUID idUser;
+
+    private UUID idSeller;
     private Map<UUID ,Integer> productQuantite;
     private Etat etat;
-    private UserDto userDto;
-    private LocalDateTime dateLivraison;
+
+    // date ou la commande a ete initiee
+    private LocalDateTime date;
 }

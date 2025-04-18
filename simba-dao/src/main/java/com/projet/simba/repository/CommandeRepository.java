@@ -14,8 +14,7 @@ public interface CommandeRepository extends JpaRepository<Commande, UUID> {
     Optional<Commande> findByIdAndDeleteAtIsNull(UUID uuid);
     List<Commande> findByDeleteAtIsNull();
 
-    @Query("select c from Commande c where c.idPrestataire = ?1 and c.deleteAt is null")
-    List<Commande> findByIdPrestataireAndDeleteAtIsNull(UUID idPrestataire);
+
 
     List<Commande> findByUserAndDeleteAtNull(Users user);
 }

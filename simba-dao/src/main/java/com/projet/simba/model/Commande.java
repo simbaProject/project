@@ -35,8 +35,7 @@ public class Commande {
 
     private boolean withLivraison;
 
-    @Column(nullable = false)
-    private UUID idPrestataire;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id")

@@ -4,7 +4,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Named;
 import org.locationtech.jts.geom.*;
 
-//import java.awt.*;
 
 @Mapper(componentModel = "spring")
 public interface PointMapper {

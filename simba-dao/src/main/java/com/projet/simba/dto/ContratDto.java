@@ -7,6 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -17,4 +19,6 @@ public class ContratDto {
     private String refContrat;
     @NotNull(message = "the price fixed is mandatory")
     private double prixLivraison;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 }

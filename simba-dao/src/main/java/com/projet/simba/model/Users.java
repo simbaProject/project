@@ -4,7 +4,10 @@ import com.projet.simba.model.enumType.RoleUser;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.type.SqlTypes;
+import org.locationtech.jts.geom.Point;
 
 
 import java.time.LocalDateTime;
@@ -37,6 +40,9 @@ public class Users {
     @CreationTimestamp
     @Column(nullable = false,updatable = false)
     protected LocalDateTime createAt;
+    @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
+    @JdbcTypeCode(SqlTypes.GEOMETRY)
+    private Point geography;
 
     @UpdateTimestamp
     protected LocalDateTime updateAt;

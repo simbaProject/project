@@ -20,6 +20,8 @@ public class ClientDto extends UserCanMarkDto {
     
     @NotNull(message = "The date of birth is mandatory")
     private LocalDate dateOfBirth;
+    @NotNull(message = "The sex must to be specified birth is mandatory")
+    private char genre;
     
 
 

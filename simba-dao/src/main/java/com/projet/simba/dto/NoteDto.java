@@ -9,6 +9,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 
@@ -24,6 +25,8 @@ public class NoteDto {
     private String avis;
     @NotNull(message = "Note is mandatory")
     private int note;
-    private UserDto userDto;
-    private VendeurDto prestataireDto;
+    private UUID userId;
+    private UUID vendeurId;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 }
