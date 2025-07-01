@@ -43,6 +43,7 @@ public class Users {
     @Column(columnDefinition = "geography(Point,4326)", nullable = false)
     @JdbcTypeCode(SqlTypes.GEOMETRY)
     @Transient
+
     private Point geography;
 
     @UpdateTimestamp
