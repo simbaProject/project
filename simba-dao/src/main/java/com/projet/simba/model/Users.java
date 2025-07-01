@@ -40,15 +40,10 @@ public class Users {
     @CreationTimestamp
     @Column(nullable = false,updatable = false)
     protected LocalDateTime createAt;
-<<<<<<< HEAD
+
 
     @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
     @JdbcTypeCode(SqlTypes.GEOMETRY)
-    @Transient
-=======
-    @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
-    @JdbcTypeCode(SqlTypes.GEOMETRY)
->>>>>>> parent of ec15d0f (Reprise du code en local)
     private Point geography;
 
     @UpdateTimestamp
