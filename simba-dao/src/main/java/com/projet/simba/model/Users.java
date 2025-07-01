@@ -40,8 +40,9 @@ public class Users {
     @CreationTimestamp
     @Column(nullable = false,updatable = false)
     protected LocalDateTime createAt;
-    @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
+    @Column(columnDefinition = "geography(Point,4326)", nullable = false)
     @JdbcTypeCode(SqlTypes.GEOMETRY)
+    @Transient
     private Point geography;
 
     @UpdateTimestamp
