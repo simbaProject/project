@@ -1,5 +1,5 @@
 package com.projet.simba.dto;
 
-public class UserCanMarkDto extends UserDto{
 
+public class UserCanMarkDto extends UserDto {
 }

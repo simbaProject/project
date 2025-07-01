@@ -1,50 +1,45 @@
 package com.projet.simba.model;
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
+import com.projet.simba.model.enumType.TypeMultimedia;
+import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import com.projet.simba.model.enumType.*;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Entity
 @Getter
 @Setter
+@Entity
 public class Multimedia {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID idMuuid;
+    @GeneratedValue(
+            strategy = GenerationType.UUID
+    )
+    private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "produit_id",nullable = false)
-    private Multimedia multimedia;
-
-    @Column(nullable = false)
+    @Column(
+            nullable = false
+    )
     private TypeMultimedia type;
-
-    @Column(nullable = false)
+    @Column(
+            nullable = false
+    )
     private String cheminVersImage;
-
     @CreationTimestamp
-    @Column(nullable = false,updatable = false)
+    @Column(
+            nullable = false,
+            updatable = false
+    )
     private LocalDateTime createAt;
     @UpdateTimestamp
     private LocalDateTime updateAt;
     private LocalDateTime deleteAt;
 
-
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "produits_id")
+    private Produits produits;
 
 }

@@ -5,6 +5,7 @@ import com.projet.simba.model.EntrepriseLivraison;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -15,4 +16,7 @@ public interface EntrepriseLivraisonRepository extends JpaRepository<EntrepriseL
     @Query("select e from EntrepriseLivraison e where e.contrat = ?1 and e.deleteAt is null")
     Optional<EntrepriseLivraison> findByContratAndDeleteAtNull(Contrat contrat);
 
+    Optional<EntrepriseLivraison> findByNomAndDeleteAtIsNull(String name);
+
+    List<EntrepriseLivraison> findByDeleteAtIsNull();
 }

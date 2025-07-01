@@ -5,8 +5,10 @@ import com.projet.simba.model.Admin;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses ={PointMapper.class})
 public interface AdminMapper {
+    @Mapping(target = "latitude", source = "geography", qualifiedByName = "extractLatitude")
+    @Mapping(target = "longitude", source = "geography", qualifiedByName = "extractLongitude")
     AdminDto toDto(Admin admin);
 
     @Mapping(source = "id" ,target = "id" ,ignore = true)

@@ -15,7 +15,7 @@ public interface MultimediaMapper {
 
     MultimediaDto toDto(Multimedia multimedia);
 
-    @Mapping(source = "idMuuid" , target = "idMuuid",ignore = true)
+    @Mapping(source = "idMuuid" , target = "id",ignore = true)
     @Mapping(source = "updateAt" ,target = "updateAt",ignore = true)
     @Mapping(source = "createAt" ,target = "createAt",ignore = true)
     Multimedia toEntity(MultimediaDto multimediaDto);
@@ -27,7 +27,7 @@ public interface MultimediaMapper {
         else
             return multimediaList
                     .stream()
-                    .map(Multimedia::getIdMuuid)
+                    .map(Multimedia::getId)
                     .collect(Collectors.toList());
     }
 }

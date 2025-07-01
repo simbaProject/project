@@ -7,108 +7,75 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * The interface Prestataire service.
+ * The interface vendeur service.
  */
 @Service
 public interface VendeurService {
     /**
-     * Create prestataire prestataire dto.
+     * Create vendeur  dto.
      *
-     * @param prestataireDto the prestataire dto
-     * @return the prestataire dto
+     * @param vendeurDto the vendeur
+     * @return the vendeur dto
      */
-    VendeurDto createVendeur(VendeurDto prestataireDto);
+    VendeurDto createVendeur(VendeurDto vendeurDto);
 
     /**
-     * Gets prestataires.
+     * Gets vendeur.
      *
-     * @return the prestataires
+     * @return the vendeur object dto
      */
     List<VendeurDto> getVendeurs();
 
     /**
-     * Gets prestataire.
+     * Gets vendeurs.
      *
      * @param id the id
      * @return the prestataire
      */
-    VendeurDto getVendeur(UUID id);
+    VendeurDto getUser(UUID id);
 
     /**
-     * Gets prestataire.
+     * Gets vendeur.
      *
      * @param nom the nom
-     * @return the prestataire
+     * @return the vendeur
      */
-    VendeurDto getVendeur(String nom);
+    VendeurDto getUser(String nom);
 
     /**
-     * Update prestataire prestataire dto.
+     * Update vendeur vendeur dto.
      *
      * @param id             the id
-     * @param prestataireDto the prestataire dto
-     * @return the prestataire dto
+     * @param vendeurDto the vendeur dto
+     * @return the vendeur dto
      */
-    VendeurDto updateVendeur(UUID id, VendeurDto prestataireDto);
+    VendeurDto updateVendeur(UUID id, VendeurDto vendeurDto);
 
     /**
-     * Update prestataire name prestataire dto.
+     * Update vendeur name vendeur dto.
      *
      * @param id             the id
-     * @param prestataireDto the prestataire dto
-     * @return the prestataire dto
+     * @param vendeurDto the vendeur dto
+     * @return the vendeur dto
      */
-    VendeurDto updateVendeurName(UUID id,VendeurDto prestataireDto);
+    VendeurDto updateVendeurName(UUID id,VendeurDto vendeurDto);
+
 
     /**
-     * Update prestataire mail prestataire dto.
-     *
-     * @param id             the id
-     * @param prestataireDto the prestataire dto
-     * @return the prestataire dto
-     */
-    VendeurDto updateVendeurMail(UUID id,VendeurDto prestataireDto);
-
-    /**
-     * Update prestataire coordonnees prestataire dto.
-     *
-     * @param id             the id
-     * @param prestataireDto the prestataire dto
-     * @return the prestataire dto
-     */
-    VendeurDto updateVendeurCoordonnees(UUID id,VendeurDto prestataireDto);
-
-    /**
-     * Delete prestataire boolean.
+     * Delete vendeur .
      *
      * @param id the id
-     * @return the boolean
+     * @return the boolean result of this deleting
      */
     boolean deleteVendeur(UUID id);
 
     /**
-     * Update adresse vendeur dto.
+     * Gets vendeurs by product. we want to give a list of sellers who has this product
      *
-     * @param prestataireId  the prestataire id
-     * @param prestataireDto the prestataire dto
-     * @return the vendeur dto
+     * @param libelle the libelle of product
+     * @return the vendeur by food
      */
-    VendeurDto updateAdresse(UUID prestataireId,VendeurDto prestataireDto);
+    List<VendeurDto> getVendeursByProduct(String libelle);
 
-    /**
-     * Gets prestataires by food.
-     *
-     * @param libelle the libelle
-     * @return the prestataires by food
-     */
-    List<VendeurDto> getVendeursByFood(String libelle);
 
-    /**
-     * Update prestataire nature vendeur dto.
-     *
-     * @param mail           the mail
-     * @param prestataireDto the prestataire dto
-     * @return the vendeur dto
-     */
-    VendeurDto updateVendeurNature(String mail, VendeurDto prestataireDto);
 }

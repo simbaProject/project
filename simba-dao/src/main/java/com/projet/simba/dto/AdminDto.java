@@ -7,12 +7,12 @@ import lombok.Setter;
 
 import java.util.UUID;
 
-
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(
+        ignoreUnknown = true
+)
 public class AdminDto extends UserDto {
-
     private UUID EntryKey;
 }

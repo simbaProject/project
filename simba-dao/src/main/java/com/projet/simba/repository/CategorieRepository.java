@@ -8,4 +8,5 @@ import java.util.UUID;
 
 public interface CategorieRepository extends JpaRepository<Categorie, UUID> {
 
+    Optional<Categorie> findByLibelle(String libelle);
 }
