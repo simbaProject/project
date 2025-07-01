@@ -9,9 +9,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.projet</groupId>
-    <artifactId>foodGo</artifactId>
+    <artifactId>simba</artifactId>
     <version>0.0.1</version>
-    <name>foodGo</name>
     <description> project for Spring Boot</description>
     <url/>
     <licenses>
@@ -203,9 +202,3 @@
 	</build>
 
 </project>
-
-
-
-
-
-
