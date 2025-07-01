@@ -12,6 +12,7 @@
     <groupId>com.projet</groupId>
     <artifactId>simba</artifactId>
     <version>0.0.1</version>
+    <name>dao</name>
     <description> project for Spring Boot</description>
     <url/>
     <licenses>
