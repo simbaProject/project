@@ -15,17 +15,17 @@ import java.util.UUID;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonIgnoreProperties(
-        ignoreUnknown = true
-)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class CommandeDto {
     private UUID id;
     private Double prixTotal;
-    private @NotNull(
-            message = "you should to tell if the command is with livraison"
-    ) boolean withLivraison;
+    @NotNull(message = "you should to tell if the command is with livraison")
+    private boolean withLivraison;
+
     private UUID idSeller;
-    private Map<UUID, Integer> productQuantite;
+    private Map<UUID ,Integer> productQuantite;
     private Etat etat;
+
+    // date ou la commande a ete initiee
     private LocalDateTime date;
 }

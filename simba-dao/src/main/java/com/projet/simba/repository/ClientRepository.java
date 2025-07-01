@@ -8,9 +8,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface ClientRepository extends JpaRepository<Client, UUID> {
+
     Optional<Client> findByIdAndDeleteAtIsNull(UUID uuid);
-
     List<Client> findByDeleteAtIsNull();
+    Optional<Client> findByNom(String nom);
 
-    List<Client> findByNomAndDeleteAtIsNull(String nom);
 }

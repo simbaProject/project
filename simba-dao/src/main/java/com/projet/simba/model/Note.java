@@ -14,23 +14,27 @@ import java.util.UUID;
 @Setter
 public class Note {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.UUID
-    )
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     private String avis;
     private int note;
-    @ManyToOne(optional = false)
+
+    @ManyToOne
+    @JoinColumn(name = "user_id",nullable = false)
     private UserCanMark user;
-    @ManyToOne(optional = false)
+
+    @ManyToOne
+    @JoinColumn(name = "vendeur_id",nullable = false)
     private Vendeur vendeur;
+
     @CreationTimestamp
-    @Column(
-            nullable = false,
-            updatable = false
-    )
+    @Column(nullable = false,updatable = false)
     private LocalDateTime createAt;
     @UpdateTimestamp
     private LocalDateTime updateAt;
     private LocalDateTime deleteAt;
+
+
+
 }
