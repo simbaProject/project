@@ -25,6 +25,7 @@ public class UserDto {
     @Size(min=8,message = "The password has 8 characters minimum")
     protected String motDePasse;
 
+    @NotNull(message = "location is mandatory")
     protected String localisation;
     @NotNull(message = "The mail address is mandatory")
     @Size(min = 1,max = 50,message = "The mail is between 1 to 50 characters")

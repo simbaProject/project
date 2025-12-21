@@ -27,4 +27,8 @@ public class Vendeur extends Users {
     @OneToMany(mappedBy = "vendeur", cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Note> notesList;
 
+    @Column(columnDefinition = "geometry(Point,4326)")
+    @JdbcTypeCode(SqlTypes.GEOMETRY)
+    private Point geography;
+
 }

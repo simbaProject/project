@@ -4,10 +4,8 @@ import com.projet.simba.model.enumType.RoleUser;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UpdateTimestamp;
-import org.hibernate.type.SqlTypes;
-import org.locationtech.jts.geom.Point;
+
 
 
 import java.time.LocalDateTime;
@@ -22,6 +20,8 @@ import java.util.UUID;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Users {
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -34,17 +34,13 @@ public class Users {
     @Column(nullable = false,unique = true)
     protected String adresseMail;
 
-    @Column(nullable = false)
+    @Column
     protected String localisation;
     protected double montantCompte;
     @CreationTimestamp
     @Column(nullable = false,updatable = false)
     protected LocalDateTime createAt;
 
-
-    @Column(columnDefinition = "geometry(Point,4326)", nullable = false)
-    @JdbcTypeCode(SqlTypes.GEOMETRY)
-    private Point geography;
 
     @UpdateTimestamp
     protected LocalDateTime updateAt;
